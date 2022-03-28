@@ -7,9 +7,9 @@ import (
 
 func main() {
 	http.HandleFunc("/", HealthCheckHandler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":80", nil))
 }
 
 func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("ok"))
+	_, _ = w.Write([]byte("ok"))
 }
